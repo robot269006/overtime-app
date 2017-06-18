@@ -13,9 +13,3 @@ module Overtime
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-
-config.generators do |g|
-  g.helper false
-  g.assets false
-  g.test_framework false
-end
