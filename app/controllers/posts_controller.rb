@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :set_params, only: [:show]
+
   def index
   end
 
@@ -22,6 +24,10 @@ class PostsController < ApplicationController
   private
     def post_params
       params.require(:post).permit(:date, :rationale)
+    end
+
+    def set_params
+      @post = Post.find(params[:id])
     end
 
 end
