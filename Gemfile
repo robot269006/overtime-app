@@ -36,3 +36,4 @@ end
 
 # custom gems
 gem 'devise', '~> 4.3'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
