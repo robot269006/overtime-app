@@ -1,4 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "posts.scss";
-@import "static.scss"
+@import "static.scss";
+
+.custom-nav {
+  margin-top: 75px;
+}
