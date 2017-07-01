@@ -30,7 +30,7 @@
             <%= post.user.last_name %>
           </td>
           <td>
-            <%= post.rationale %>
+            <%= truncate(post.rationale) %>
           </td>
         </tr>
       <% end %>
