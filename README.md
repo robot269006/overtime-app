@@ -1,7 +1,7 @@
 # Overtime app
 
 ## Models
- - Posts
+ x Posts
  x User
  x Admin-user (via Single Table Inheritance)
 
