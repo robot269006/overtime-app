@@ -24,6 +24,14 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def update
+    if @post = Post.update(post_params)
+      redirect_to @post, notice: "Your post has been edited"
+    else
+      render :edit
+    end
+  end
+
   def show
   end
 
