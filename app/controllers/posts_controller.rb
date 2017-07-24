@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :set_params, only: [:show]
+  before_action :set_params, only: [:show, :edit]
 
   def index
     @posts = Post.all
@@ -19,6 +19,9 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   def show
