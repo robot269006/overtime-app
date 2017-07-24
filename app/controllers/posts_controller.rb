@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :set_params, only: [:show, :edit]
+  before_action :set_params, only: [:show, :edit, :update]
 
   def index
     @posts = Post.all
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post = Post.update(post_params)
+    if @post.update(post_params)
       redirect_to @post, notice: "Your post has been edited"
     else
       render :edit
