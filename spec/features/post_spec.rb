@@ -14,15 +14,26 @@ describe 'navigate' do
     it 'can be reached successfully' do
       expect(page.status_code).to eq(200)
     end
+
     it 'has a title called posts' do
       expect(page).to have_content(/Posts/)
     end
+
     it 'has a list of posts' do
       post1 = FactoryGirl.build_stubbed(:post)
       post2 = FactoryGirl.build_stubbed(:second_post)
       visit posts_path
       expect(page).to have_content(/Rationale|content/)
     end
+
+    it 'has a scope so that only post creators can see their posts' do
+      post1 = FactoryGirl.build_stubbed(:post)
+      post2 = FactoryGirl.build_stubbed(:second_post)
+      non_authorized_user = User.create(first_name: 'Non', last_name: 'Authorized', email: "nonauth@test.com",password: "asdfasdf", password_confirmation: "asdfasdf")
+      post_from_other_user = Post.create(date: Date.today, rationale: "asdf", user_id: non_authorized_user.id)
+      byebug
+    end
+
   end
 
   describe 'new' do
