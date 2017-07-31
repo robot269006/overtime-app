@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates_presence_of :first_name, :last_name, :phone
   has_many :posts
+  has_many :audit_logs
 
   # PHONE_REGEX is the regular expression matcher, and :phone format is checked with this matcher
   PHONE_REGEX = /\A[0-9]*\Z/
