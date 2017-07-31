@@ -46,3 +46,6 @@ gem 'bourbon'
 
 #server gem
 gem 'puma', '~> 3.9', '>= 3.9.1'
+
+#twilio API gem
+gem 'twilio-ruby', '~> 5.1'
