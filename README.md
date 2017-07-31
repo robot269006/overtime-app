@@ -20,3 +20,7 @@
  - Dotenv
  - Rspec
  - Capybara
+
+## TODO
+ - SMS sending -> phone no. approval to be done.
+ - set Heroku scheduler to run rake tasks with timer
