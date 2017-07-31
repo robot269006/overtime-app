@@ -75,13 +75,15 @@ describe 'navigate' do
     it 'can be created from new form page' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "Some rationale"
-      click_on "Save"
-      expect(page).to have_content("Some rationale")
+      fill_in 'post[overtime_request]', with: 4.5
+      expect { click_on "Save" }.to change(Post, :count).by(1)
     end
 
     it 'will have a user associated to a post' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "User_association"
+      fill_in 'post[overtime_request]', with: 4.5
+
       # "User_association" is written so that test can be run based on that "User_association" text
       click_on "Save"
       expect(User.last.posts.last.rationale).to eq("User_association")
@@ -93,6 +95,8 @@ describe 'navigate' do
       visit edit_post_path(post)
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "Edited content"
+      fill_in 'post[overtime_request]', with: 4.5
+
       click_on "Save"
       expect(page).to have_content("Edited content")
     end
