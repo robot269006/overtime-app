@@ -3,18 +3,18 @@
                     password_confirmation: "asdfasdf",
                     first_name: "Jon",
                     last_name: "Snow",
-                    phone: "09017726822")
+                    phone: "9017726822")
 
-puts "1 User created"
+puts "1 User created" if @user.present?
 
 AdminUser.create(email: "admin@test.com",
                  password: "asdfasdf",
                  password_confirmation: "asdfasdf",
                  first_name: "Admin",
                  last_name: "Taro",
-                 phone: "09017726822")
+                 phone: "9017726822")
 
-puts "1 Admin User created"
+puts "1 Admin User created" if AdminUser.present?
 
 
 100.times do |post|
