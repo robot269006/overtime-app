@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'AuditLog Feature' do
   describe 'index' do
     before do
-      normal_user = FactoryGirl.create(:user)
-      login_as(normal_user, scope: :user)
+      admin_user = FactoryGirl.create(:admin_user)
+      login_as(admin_user, :scope => :user)
       FactoryGirl.create(:audit_log)
     end
 
