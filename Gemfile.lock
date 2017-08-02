@@ -276,6 +276,7 @@ DEPENDENCIES
   gritter (~> 1.2)
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari (~> 1.0, >= 1.0.1)
   listen (~> 3.0.5)
   mysql2 (>= 0.3.18, < 0.5)
   pry-rails
