@@ -6,8 +6,12 @@ class AuditLog < ApplicationRecord
 
   #callback method
   after_initialize :set_defaults
+  before_update :set_end_date, if: :confirmed?
 
   private
+  def set_end_date
+    self.end_date = Date.today
+  end
   def set_defaults
     # ||= -> this looks at the rest of the system,
     # if the start date is passed in, it's going to use that passed-in value
